@@ -103,7 +103,23 @@
                     <targetTests>
                         <param>com.tidewater.freight.*</param>
                     </targetTests>
+                    <!-- Demo is a manual entry point with no business logic -->
+                    <excludedClasses>
+                        <param>com.tidewater.freight.Demo</param>
+                    </excludedClasses>
+                    <!-- Fail the build if fewer than 90% of mutants are killed.
+                         The inherited tests scored 17%. -->
+                    <mutationThreshold>90</mutationThreshold>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>mutation-check</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>mutationCoverage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
