@@ -1,5 +1,8 @@
 package com.tidewater.freight;
 
+import com.tidewater.freight.repository.InMemoryRateRepository;
+import com.tidewater.freight.repository.RateRepository;
+
 public class ShippingCalculator {
 
     // The calculator makes its own rate source, so callers and tests cannot give it another.

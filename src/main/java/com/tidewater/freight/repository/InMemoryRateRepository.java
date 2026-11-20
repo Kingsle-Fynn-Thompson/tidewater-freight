@@ -1,4 +1,4 @@
-package com.tidewater.freight;
+package com.tidewater.freight.repository;
 
 import java.util.HashMap;
 import java.util.Map;
