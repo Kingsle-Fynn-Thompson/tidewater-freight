@@ -42,7 +42,7 @@ public class ShippingCalculator {
             }
             return rate;
         } catch (ShippingException e) {
-            throw e; // already meaningful, let it through unchanged
+            throw e;
         } catch (RuntimeException e) {
             throw new RateUnavailableException("Could not retrieve rates for zone: " + zone, e);
         }
