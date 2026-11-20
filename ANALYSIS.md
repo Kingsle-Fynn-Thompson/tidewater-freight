@@ -107,7 +107,6 @@ Only two real calculations are ever executed: DOMESTIC 10 kg and REGIONAL 5 kg, 
 | Void method call | 4 | 0 | Most likely the `println` calls (one in the calculator, three in `Demo`) |
 | Primitive returns | 2 | 2 | The only well-caught mutants, almost certainly by the `cost > 0` check |
 
-To confirm in the PIT HTML report: which test kills each of the 3 killed mutants.
 
 ## 4. Most serious problem, and why
 
@@ -137,7 +136,7 @@ The others (hard-wired repository, `if/else` chain, mixed responsibilities) are 
 | Console output | Removed from the calculator. |
 | Magic numbers | Named constants or configuration. |
 
-**Design note, revised from the earlier proposal.** Now that the code is visible, every zone follows the same formula and differs only in its numbers (rate per kg and flat fee). One class per zone would be over-engineering. A data-driven zone rate (a small record held by the repository) lets the new zone be added as data with no code change at all, and only a zone with genuinely different logic would need a new rule class.
+**Design note.** Now that the code is visible, every zone follows the same formula and differs only in its numbers (rate per kg and flat fee). One class per zone would be over-engineering. A data-driven zone rate (a small record held by the repository) lets the new zone be added as data with no code change at all, and only a zone with genuinely different logic would need a new rule class.
 
 ## 6. Open questions for the reviewer check-in
 
@@ -156,6 +155,8 @@ The others (hard-wired repository, `if/else` chain, mixed responsibilities) are 
 4. Replace the three hollow tests with a real JUnit 5 and Mockito suite.
 5. Add the improvement beyond the brief: a PIT mutation threshold in the build, justified by the 17% baseline.
 
+Note: the refactor was built before the reviewer's answers to section 6 arrived.
+The five assumptions in section 9.7 keep the original behaviour and are pinned by tests, so any change the reviewer requests in small.
 ## 8. Results after the refactor
 
 Measured on 20 Nov 2026 with `mvn clean verify`.
