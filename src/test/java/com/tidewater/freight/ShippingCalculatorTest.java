@@ -137,9 +137,13 @@ class ShippingCalculatorTest {
     }
 
     @Test
-    void constructorRejectsMissingDependencies() {
+    void constructorRejectsAMissingRepository() {
         assertThrows(NullPointerException.class,
                 () -> new ShippingCalculator(null, HeavyItemSurcharge.standard()));
+    }
+
+    @Test
+    void constructorRejectsAMissingSurcharge() {
         assertThrows(NullPointerException.class,
                 () -> new ShippingCalculator(repository, null));
     }

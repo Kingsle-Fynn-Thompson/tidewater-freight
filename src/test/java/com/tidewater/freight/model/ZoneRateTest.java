@@ -17,12 +17,16 @@ class ZoneRateTest {
 
     @Test
     void aZeroFeeIsAllowed() {
-        assertDoesNotThrow(() -> ZoneRate.of("5.0", "0"));
+        ZoneRate rate = ZoneRate.of("5.0", "0");
+        assertEquals(0, new BigDecimal("5.0").compareTo(rate.ratePerKg()));
+        assertEquals(0, BigDecimal.ZERO.compareTo(rate.flatFee()));
     }
 
     @Test
     void aZeroRateIsAllowed() {
-        assertDoesNotThrow(() -> ZoneRate.of("0", "10"));
+        ZoneRate rate = ZoneRate.of("0", "10");
+        assertEquals(0, BigDecimal.ZERO.compareTo(rate.ratePerKg()));
+        assertEquals(0, new BigDecimal("10").compareTo(rate.flatFee()));
     }
 
     @Test

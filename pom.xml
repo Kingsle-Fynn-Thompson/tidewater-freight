@@ -64,7 +64,11 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
             </plugin>
-
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.15.0</version>
+            </plugin>
             <!-- Coverage: mvn verify, then open target/site/jacoco/index.html -->
             <plugin>
                 <groupId>org.jacoco</groupId>
@@ -111,8 +115,7 @@
                          The inherited tests scored 17%. -->
                     <mutationThreshold>90</mutationThreshold>
                 </configuration>
-                <executions>
-                    <execution>
+                <executions>                    <execution>
                         <id>mutation-check</id>
                         <phase>verify</phase>
                         <goals>

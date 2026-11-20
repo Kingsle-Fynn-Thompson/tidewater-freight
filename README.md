@@ -38,7 +38,7 @@ The two sets of mutation numbers are not strictly like-for-like, because the cod
 
 ## Running it
 
-You need **JDK 21** and **Maven**.
+You need **JDK 21** and **Maven 3.9** .
 
 Run the demo:
 

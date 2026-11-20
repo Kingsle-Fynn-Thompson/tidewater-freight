@@ -6,6 +6,8 @@ import com.tidewater.freight.model.Weight;
 import com.tidewater.freight.pricing.HeavyItemSurcharge;
 import com.tidewater.freight.repository.InMemoryRateRepository;
 
+import java.util.Locale;
+
 public class Demo {
 
     public static void main(String[] args) {
@@ -18,11 +20,13 @@ public class Demo {
     }
 
     private static void show(ShippingCalculator calculator, String zone, double kg, String level) {
+        String request = String.format(Locale.ROOT,
+                "Zone: %-13s Weight: %5.1f kg  Service: %-8s", zone, kg, level);
         try {
             var cost = calculator.calculateCost(zone, Weight.ofKilograms(kg), ServiceLevel.parse(level));
-            System.out.println(zone + " " + kg + "kg " + level + " -> GHS " + cost);
+            System.out.println(request + " -> GHS " + cost);
         } catch (ShippingException e) {
-            System.out.println(zone + " " + kg + "kg " + level + " -> REJECTED: " + e.getMessage());
+            System.out.println(request + " -> REJECTED: " + e.getMessage());
         }
     }
 }

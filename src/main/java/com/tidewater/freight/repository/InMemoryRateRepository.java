@@ -17,10 +17,10 @@ public class InMemoryRateRepository implements RateRepository {
     }
 
     private static Map<String, ZoneRate> defaultRates() {
-        return Map.of(
-                "DOMESTIC", ZoneRate.of("5.0", "0"),
-                "REGIONAL", ZoneRate.of("8.0", "10"),
-                "INTERNATIONAL", ZoneRate.of("15.0", "25"));
+        return Map.ofEntries(
+                Map.entry("DOMESTIC", ZoneRate.of("5.0", "0")),
+                Map.entry("REGIONAL", ZoneRate.of("8.0", "10")),
+                Map.entry("INTERNATIONAL", ZoneRate.of("15.0", "25")));
     }
 
     @Override
