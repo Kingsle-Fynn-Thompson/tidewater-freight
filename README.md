@@ -27,11 +27,11 @@ The result is a `BigDecimal` in GHS, rounded to 2 decimal places (HALF_UP).
 
 | Measure | Inherited code | Refactored |
 |---|---|---|
-| Tests | 3 | 67 |
+| Tests | 3 | 75 |
 | Mutants killed (PIT) | 3 of 18 (17%) | 22 of 22 (100%) |
 | Test strength | 27% | 100% |
 | Mutants with no coverage | 7 | 0 |
-| Line coverage (mutated classes) | 61% | 99% |
+| Line coverage (mutated classes) | 61% | 100% |
 | Unknown zone `MOON` | silently returned `0.0` | rejected with `UnknownZoneException` |
 
 The two sets of mutation numbers are not strictly like-for-like, because the code was restructured and `Demo` is now excluded from mutation scope. See ANALYSIS.md section 8 for the honest reading.
@@ -103,7 +103,7 @@ src/main/java/com/tidewater/freight
 src/test/java/com/tidewater/freight
 ├── CharacterizationTest.java          pins the original prices
 ├── ShippingCalculatorTest.java        Mockito: happy, edge and failure paths
-├── model/       WeightTest, ServiceLevelTest
+├── model/       WeightTest, ServiceLevelTest, ZoneRateTest
 ├── pricing/     HeavyItemSurchargeTest
 └── repository/  InMemoryRateRepositoryTest
 ```

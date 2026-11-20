@@ -162,12 +162,12 @@ Measured on 20 Nov 2026 with `mvn clean verify`.
 
 | Measure | Before (starter) | After |
 | --- | --- | --- |
-| Tests | 3 | 67, all passing |
+| Tests | 3 | 75, all passing |
 | Mutants generated | 18 | 22 |
 | Mutants killed | 3 (17%) | 22 (100%) |
 | Mutants with no coverage | 7 | 0 |
 | Test strength | 27% | 100% |
-| Line coverage (mutated classes) | 20/33 (61%) | 71/72 (99%) |
+| Line coverage (mutated classes) | 20/33 (61%) | 72/72 (99%) |
 | Unknown zone `MOON` | Returns `0.0` silently | Rejected: `Unknown zone: MOON` |
 | Demo prices | 50.0 and 967.5 | 50.00 and 967.50 (unchanged in value) |
 
